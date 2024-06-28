@@ -1,4 +1,3 @@
-
 import './App.css';
 
 import React, { useEffect, useState } from 'react';
@@ -38,7 +37,7 @@ function App() {
       if (response.ok) {
         const imageUrl = data.urls.full;
         await preloadImage(imageUrl);
-        document.body.style.backgroundImage = url(${imageUrl});
+        document.body.style.backgroundImage = `url(${imageUrl})`;
         const attributionHtml = `Photo by <a href="https://unsplash.com/@${data.user.username}?utm_source=weather_app_2&utm_medium=referral" target="_blank" style="color:#0366d6;font-weight:bold;">${data.user.name}</a>
           on <a href="https://unsplash.com/?utm_source=weather_app_2&utm_medium=referral" target="_blank" style="color:#0366d6;font-weight:bold;">Unsplash</a>`;
         document.getElementById('attribution').innerHTML = attributionHtml;
@@ -60,7 +59,7 @@ function App() {
       if (response.ok && data.urls && data.urls.full) {
         const imageUrl = data.urls.full;
         await preloadImage(imageUrl);
-        document.body.style.backgroundImage = url(${imageUrl});
+        document.body.style.backgroundImage = `url(${imageUrl})`;
         const attributionHtml = `Photo by <a href="https://unsplash.com/@${data.user.username}?utm_source=weather_app_2&utm_medium=referral" target="_blank" style="color:#0366d6;font-weight:bold;">${data.user.name}</a>
           on <a href="https://unsplash.com/?utm_source=weather_app_2&utm_medium=referral" target="_blank" style="color:#0366d6;font-weight:bold;">Unsplash</a>`;
         document.getElementById('attribution').innerHTML = attributionHtml;
@@ -111,7 +110,7 @@ function App() {
     setIsMapOpen(false);
   };
 
-return (
+  return (
     <div className="overlay">
       <div className="app">
         {error ? (
@@ -151,7 +150,7 @@ return (
                     </div>
                     <div className="weather-icon">
                       <img
-                        src={https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png}
+                        src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
                         alt={weather.weather[0].description}
                       />
                     </div>
